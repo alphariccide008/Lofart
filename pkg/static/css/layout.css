@@ -1,0 +1,114 @@
+div{
+            
+    min-height: 100px
+}
+body{
+    background-color: #e1e1e1;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+#sec1{
+    background-image:linear-gradient(to left, rgba(0,0,0,0.8)40% ,rgba(0,0,0,0.5)), url("/static/img/img/firstportrait.jpg");  
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 670px;
+
+}
+.navIcon{
+    background-color: #c0bcbc;
+}
+#sec1 h1{
+    font-size: 70px;
+    padding-top: 170px;
+    padding-bottom: 40px;
+}
+#sec1{
+    color: #c0bcbc;
+}
+#sec1 span{
+    font-size: 20px;
+}
+#sec2{
+    background-image:linear-gradient(to right, rgba(0,0,0,0.3)40% ,rgba(0,0,0,0.5)), url("/static/img/img/background3.jpg");  
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+#sec2 h1{
+    height: 100px;
+}
+.navbar{
+    background-color: rgba(0,0,0,0.9);
+    
+}
+.navbar a{
+    color: #c0bcbc;
+}
+#sec2{
+    padding-top: 150px;
+}
+.firstWriteUp{
+    padding-top: 80px;
+}
+#thirdbg{
+    background-image:linear-gradient(to right, rgba(0,0,0,0.7)40% ,rgba(0,0,0,0.7)), url("/static/img/img/colorportrait.jpg");  
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding: 200px 50px;
+    
+    
+
+}
+
+#thirdbg h1{
+    font-size: 60px;
+}
+#thirdbg p{
+    font-size: 25px;
+    color:  #c0bcbc;
+}
+ .zoomIn {
+    overflow: hidden;
+    position: relative;
+} 
+
+.zoomIn img {
+transition: transform 0.3s ease-in-out; 
+height: 400px !important;
+}
+
+.zoomIn img:hover {
+transform: scale(0.9);
+}
+.footer{
+    background-image:linear-gradient(to right, rgba(0,0,0,0.7)40% ,rgba(0,0,0,0.7)), url("/static/img/img/footer1.jpg");  
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+}
+.opa{
+    background-color: rgba(0,0,0,0.3);
+}
+.icon{
+    margin-top: -100px;
+}
+.footerLink:hover{
+    background-color: #531414;
+    align-items: center;
+    
+}
+.offcanvas-body ul li{
+    list-style: none !important;
+}
+.offcanvas-body a{
+    text-decoration: none;
+}
+.navbar-nav{
+    width: 100%;
+}

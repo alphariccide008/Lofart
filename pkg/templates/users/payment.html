@@ -1,0 +1,37 @@
+{% extends 'users/home_layout.html'%}
+
+
+
+{% block content%}
+<div class="container mt-5 col-md-6 mb-3">
+    <div class="m-0 ">
+        <h2><strong></strong></h2>
+        
+    <form action="" class="card px-4 py-4" method="POST">
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        <strong class=""><h4 class="text-center px-3 pb-2">Kindly Details of Purchase</h4>
+        <div class="">
+            <label for="fullname" class="mb-2"><strong>FullName :</strong></label>
+            <input type="text" class="form-control border-success mb-3" name="fullname" disabled id="email" placeholder="John Wick" value="{{userdeets.user_fname}} {{userdeets.user_lname}}">
+        </div>
+
+        <div class="">
+            <label for="email" class="mb-2"><strong>Email :</strong></label>
+            <input type="email" class="form-control border-success mb-3" name="email" disabled id="email" placeholder="name@email.com" value="{{userdeets.user_email}}">
+        </div>
+        
+        <div class="">
+            <p class="text-danger"></p>
+            <label for="amt" class="mb-2"><strong>Amount: </strong></label>
+
+            <input type="number" class="form-control border-success mb-3 "   name="amount" placeholder="123xxx" value="{{deets.upload_amt}}" >
+            
+        </div>
+       
+       
+        <button type="submit" class="form-control btn btn-success">Continue</button>
+    </form>
+
+</div>
+
+{% endblock%}

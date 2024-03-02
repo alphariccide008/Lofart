@@ -1,0 +1,61 @@
+body{
+    background-image:linear-gradient(to left, rgba(0,0,0,0.8)40% ,rgba(0,0,0,0.5)), url("/static/img/img/camer4.jpg");  
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 670px;
+
+}
+.navIcon{
+    background-color: #c0bcbc;
+}
+
+.navbar{
+    background-color: rgba(0,0,0,0.9);
+}
+.navbar a{
+    color: #c0bcbc;
+}
+
+.footer{
+    background-image:linear-gradient(to right, rgba(0,0,0,0.7)40% ,rgba(0,0,0,0.7)), url("/static/img/img/footer1.jpg");  
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+}
+.opa{
+    background-color: rgba(0,0,0,0.3);
+}
+.icon{
+    margin-top: -100px;
+}
+.footerLink:hover{
+    background-color: #531414;
+    align-items: center;
+    
+}
+.offcanvas-body ul li{
+    list-style: none !important;
+}
+.offcanvas-body a{
+    text-decoration: none;
+}
+.navbar-nav{
+    width: 100%;
+}
+
+
+form{
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+#login{
+    padding: 50px;
+    margin-top: 50px;
+}
+

@@ -1,0 +1,68 @@
+{% extends 'users/home_layout.html'%}
+{% block content%}
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5 card text-center px-5 py-4">
+            <div class="mb-3">
+                <label for=""> Buyer's Name:</label>
+                {{userdeets.user_fname}}
+            </div>
+            <div class="mb-3">
+                <label for=""> Buyer's Email :</label>
+                {{userdeets.user_email}}
+            </div>
+            <div class="mb-3">
+                <label for=""> Buyer's Amount : </label>
+                &#8358; {{payment_deets.payment_amt}}
+            </div>
+            <div class="mb-3">
+                <label for=""> TRANSACTION REF</label>
+                <span class="text-danger bg-warning">{{payment_deets.refno}}</span>
+            
+            </div>
+            <form id="paymentForm">
+                <div class="mb-3">
+                    <a href="{{url_for('dashboard')}}" class="btn btn-warning"> Cancel Payment</a>
+                    <!-- <button class="btn btn-outline-danger"> Confirm Payment</button> -->
+            
+                    <a href="/intializ/paystack" class="btn btn-success">Confirm Payment</a>
+            
+                </div>
+            </form>
+            <hr>
+            
+            
+        </div>
+    </div>
+{%endblock%}
+
+{%block customjs%}
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+const paymentForm = document.getElementById('paymentForm');
+paymentForm.addEventListener("submit", payWithPaystack, false);
+
+function payWithPaystack(e) {
+  e.preventDefault();
+
+  let handler = PaystackPop.setup({
+    key: 'pk_test_ee3f372887047be287a0769ebc7e8066ea8adc8f', 
+    email: "{{userdeets.user_email}}",
+    amount: "{{payment_deets.payment_amt}}",
+    ref: "{{payment_deets.don_refno}}"*100, 
+    // label: "Optional string that replaces customer email"
+    onClose: function(){
+      alert('Window closed.');
+    },
+    callback: function(response){
+        console.log(reference);
+      let message = 'Payment complete! Reference: ' + response.reference;
+      //make ajax call to update the db with the payment status
+      alert(message);
+    }
+  });
+
+  handler.openIframe();
+}
+
+</script>
+{%endblock%}

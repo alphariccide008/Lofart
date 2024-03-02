@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOFART</title>
+    <Link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/animate.css" type="text/css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css">
+    <link rel="stylesheet" href="/static/css/reg_log.css" type="text/css">
+</head>
+<body>
+    <div class="container-fluid" >
+        <!-- this is the first section including the nav bar -->
+        
+
+        <div class="row">
+            <div class="col px-0">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                      <a class="navbar-brand px-4" href="#"><i class="fa-solid fa-camera"></i>  LOFART  <i class="fa-solid fa-scissors"></i></h5></a>
+                      <button class="navbar-toggler navIcon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto  mb-lg-0 justify-content-center">
+                          <li class="nav-item">
+                            <a class="nav-link px-4" aria-current="page" href="">HOME</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link px-4" href="{{ url_for('login')}}">LOGIN</a>
+                          </li>
+                          
+                          <li class="nav-item">
+                            <a class="nav-link px-4" href="{{ url_for('register')}}">REGISTER</a>
+                          </li>
+                          
+                        </ul>
+                        <li class="d-flex">
+                            <a class="nav-link px-4 btn form-control btn-outline-info py-2 px-2" href="#subscribe">SUBSCRIBE</a>
+                        </li>
+                      </div>
+                    </div>
+                  </nav>
+            </div>
+        </div>
+        
+       
+
+       <!-- this is the login/reg section -->
+       <div class="row secHeight justify-content-center">
+            <div class="col-md-8">
+                <div class="row mt-5 justify-content-center">              
+                    <div class="col-md-5 ">
+                     <form action="" method="POST"  class="opa pt-4" id="formMain">
+                        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+                        <div class="px-4 d" id="regForm">
+
+
+                            <h2 class="text-center text-white">REGISTERTION FORM</h2>
+                            <div>
+                                {{ form.fname.label(class_='text-white')}}
+                                {{ form.fname(class_='form-control opa')}}
+                                
+                            </div>
+                            <div class="mt-2">
+                                {{ form.lname.label (class_='text-white')}}
+                                {{ form.lname(class_='form-control opa')}}
+                            </div>
+
+                            <div class="mt-2">
+                                {{ form.email.label(class_='text-white')}}
+                                {{ form.email(class_='form-control opa')}}
+                            </div>
+                                
+                            <fieldset class="mt-2 opa">
+                                <h4>Status</h4>
+                                <div class="form-check">
+                                <input type="radio" name="status" value="Fashion_Designer" class="form-check-input" id="exampleRadio1">
+                                <label class="form-check-label" for="exampleRadio1">Fashion Designer</label>
+                                </div>
+                                <div class="mb-3 form-check">
+                                <input type="radio" name="status" value="Artist" class="form-check-input" id="exampleRadio2">
+                                <label class="form-check-label" for="exampleRadio2">Artist</label>
+                                </div>
+                            </fieldset>
+                            <div class="mt-2">
+                                {{ form.address.label (class_='text-white')}}
+                                {{ form.address(class_='form-control opa')}}
+                            </div>
+                            <div class="mt-2">
+                                {{ form.phone.label (class_='text-white')}}
+                                {{ form.phone(class_='form-control opa')}}
+                            </div>
+                            <div class="mt-2">
+                                {{ form.city.label (class_='text-white')}}
+                                {{ form.city(class_='form-control opa')}}
+                            </div>
+                            <div class="mt-2">
+                                {{form.phone.label (class_='text-white')}}
+                                {{form.phone(class_='form-control opa pt-2')}}
+                            </div>
+                            
+                            <div class="mt-2">
+                                {{ form.uname.label (class_='text-white')}}
+                                {{ form.uname(class_='form-control opa pt-2')}}
+                            </div>
+                            <div class="mt-2">
+                                {{form.pwd.label (class_='text-white')}}
+                                {{ form.pwd(class_='form-control opa pt-2')}}
+                            </div>
+                            <div class="mt-2">
+                                {{form.lga.label (class_='text-white')}}
+                                {{form.lga(class_='form-control opa pt-2')}}
+                            </div>
+                            <div class="mt-2">
+                                {{form.state.label (class_='text-white')}}
+                                {{form.state(class_='form-control opa pt-2')}}
+                            </div>
+                            <div class="mt-2">
+
+                                {{ form.btnsubmit(class_='form-control  my-3')}}
+                            </div>
+                
+                        </div>
+
+                        </div>
+                        
+                         
+                    </form>
+                    
+                     
+                    </div>
+                    <div class="row justify-content-center">
+                       <div class="col-md-10">
+                        <div class="row justify-content-end">
+                            <!-- <div class="col-md-6"></div> -->
+                            
+                        </div>
+                       </div>
+                    </div>
+           </div>
+            </div>
+       </div>
+
+       <!-- this is the footer section -->
+
+    </div>
+    <div class="footer">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="row pt-3">
+                    <div class="col-md-6">
+                        <p class="text-white px-5 pt-4" style="font-size: 20px;">
+                            Feel free to place your Mail_ID and Subscribe to our Newsletter here. So that,
+                            you can receive our exiting Updates and Offers with no wait!
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="contactEmail" class="form-label"></label>
+                        <input type="text"  class="form-control opa py-3"  id="contactEmail" name="contactEmail">
+                        <button class="form-control btn btn-outline-light py-2 my-2">SUBSCRIBE <i class="fa-regular fa-envelope"></i> </button>
+                    </div><hr class="text-white" style="border:2px solid; margin-top:100px">
+                    <div class="row">
+                        <div class="col text-center icon pb-5">
+                            <a href="#"><i class="fa-brands fa-twitter fa-3x text-white m-5 footerLink" style="color: #000000; border: 1px solid;border-radius: 50%; padding: 7px; "></i></a>
+                        </div>
+                        <div class="text-center pt-5">
+                            <a href="#"><i class="fa-brands fa-facebook fa-2x text-white footerLink " style="color: #000000; border: 1px solid;border-radius: 50%; padding: 7px; "></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram fa-2x text-white footerLink " style="color: #000000; border: 1px solid;border-radius: 50%; padding: 7px; "></i></a>
+                            <a href="#"><i class="fa-brands fa-whatsapp fa-2x text-white footerLink  mb-3 " style="color: #000000; border: 1px solid;border-radius: 50%; padding: 7px; "></i></a>
+                            <p class="text-white" style="font-size: 12px;">Copyright &copy 2023 MODELS. Design by Lawrence . All Rights Reserved</p>
+                        </div>
+                    </div>                    
+                </div>
+                
+            </div>
+        </div>
+    </div> 
+    
+
+
+    
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/log_reg.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header ">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><i class="fa-solid fa-camera"></i>  LOFART "Heart of art & Fashion" <i class="fa-solid fa-scissors"></i></h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="">
+        <a href=""class="btn btn-outline-dark form-control py-3 mb-3">
+            <li>HOME</li>
+            
+        </a>
+        <a href="" class="btn btn-outline-dark form-control py-3 mb-3">
+            <li>LOGIN</li>
+        </a>
+        <a href="" class="btn btn-outline-dark form-control py-3 mb-3">
+            <li>REGISTER</li>
+            
+        </a>
+        <a href="#" class="btn btn-outline-dark form-control py-3 mb-3">
+            <li>SUBSCRIBE</li>
+            
+        </a>
+    </ul>
+  </div>
+</div>
+</body>    
+ </html>
+

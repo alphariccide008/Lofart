@@ -1,0 +1,64 @@
+{% extends 'users/home_layout.html'%}
+{% block content%}
+<main class="content">
+	<div class="container-fluid p-0">
+
+		
+		<div class="row">
+			<div class="col ">
+				<div class="card mb-3">
+					<div class="card-header">
+						<h5 class="card-title mb-0 text-center">Profile Details</h5>
+					</div>
+					<div class="card-body text-center">
+						{%if userdeets.user_pix%}
+						<img src="/static/profiles/{{ userdeets.user_pix}}" alt="{{ userdeets.user_fname}}" class="img-fluid rounded-circle mb-2" width="120" height="128" />
+						{% else %}
+						<img src="/static/profiles/default.png" alt="default image" class="img-fluid rounded-circle mb-2" width="120" height="128" />
+						{% endif %}
+						<h5 class="card-title mb-0">{{userdeets.user_fname}} {{userdeets.user_lname}}</h5>
+						<div class="text-muted mb-2">{{ userdeets.user_usertype}}</div>
+
+						<div>
+							<a class="btn btn-primary btn-sm" href="{{ url_for('editprofile')}}">Edit profile</a>
+							<a class="btn btn-primary btn-sm" href="{{ url_for('changepass')}}">Change Password</a>
+						</div>
+					</div>
+					<hr class="my-0" />
+					<div class="card-body text-center">
+						<h3>Biodata</h3>
+						<h5 class="h6 card-title  text-center" >{{ userdeets.user_profile}}</h5>
+						
+					</div>
+					<hr class="my-0" />
+					<div class="card-body text-center">
+						<h5 class="h6 card-title">About</h5>
+						<ul class="list-unstyled mb-0">
+							<li class="mb-1"><span data-feather="home" class="feather-sm me-1"></span> Lives in : {{ userdeets.user_state}}</li>
+							<li class="mb-1"><span data-feather="envelope" class="feather-sm me-1"></span> Email : {{ userdeets.user_email}}</li>
+							<li class="mb-1"><span data-feather="phone" class="feather-sm me-1"></span> Mobile : {{ userdeets.user_phone}}</li>
+							<li class="mb-1"><span data-feather="briefcase" class="feather-sm me-1"></span> profession : {{ userdeets.user_usertype}}</li>
+							<li class="mb-1"><span data-feather="map-pin" class="feather-sm me-1"></span> From : {{ userdeets.user_city}}</li>
+						</ul>
+					</div>
+					<hr class="my-0" />
+					<div class="card-body text-center">
+						<h4 class="h6 card-title">Socials</h4>
+						<ul class="list-unstyled mb-0">
+							<li class="mb-1">Twitter</li>
+							<li class="mb-1">Facebook</li>
+							<li class="mb-1">Instagram</li>
+							<li class="mb-1">Whatsapp</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			
+		</div>
+
+	</div>
+</main>
+{% endblock content%}
+
+			

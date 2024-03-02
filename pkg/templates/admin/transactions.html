@@ -1,0 +1,54 @@
+{% extends "admin/adminlayout.html" %}
+{% block content %}
+<div class="row justify-content-center my-5">
+    <div class="col-md-10 bg-white">
+        <h4 class="text-center py-3"><b>TRANSACTION HISTORY</b></h4>
+        {% if payments%}
+        <table class="table table-stripped text-center">
+            {% set m = get_flashed_messages(with_categories=True)%}
+            {% for x,y in m%}
+                {% if x =='paymentmsg': %}
+                    <div class="alert alert-success text-center">{{y}}</div>
+                {% else: %}
+                    <div class="alert alert-success mt-2 text-center">{{y}}</div>
+                {% endif %}
+            {%endfor%}
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>BUYER'S FULLNAME</th>
+                    <th>PROJECT IMAGE</th>
+                    <th>DESCRIPTION</th>
+                    <th>PAID AMOUNT</th>
+                    <th>STATUS</th>
+                    <th>ACTion</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for x in payments %}
+                <tr>
+                    <td>{{ loop.index}} .</td>
+                    <td>{{x.paymentdeets.user_fname}} {{x.paymentdeets.user_lname}}</td>
+                   <td><img src="/static/uploads/{{x.paymentupd.upload_filename}}" alt="" height="100"></td>
+                    <td>{{x.paymentupd.upload_desc}}</td>
+                    <td>&#8358;{{ x.payment_amt}}</td>
+                    <td class="btn bg-success text-white my-5">{{x.payment_status}}</td>
+                    <td><a href="{{ url_for('payment_confirm',di=x.payment_id)}}" class="btn btn-warning">Confirm</a></td>
+                    <td><a href="{{ url_for('payment_delete',id=x.payment_id)}}" class="btn btn-danger">Delete</a></td>
+                    
+                </tr>
+                {% endfor%}
+               
+            </tbody>
+
+
+        </table>
+        {% else%}
+        <div class="alert alert-info text-center"> NO TRANSACTION FOUND</div>
+        {% endif %}
+        
+
+    </div>
+</div>
+{% endblock content%}

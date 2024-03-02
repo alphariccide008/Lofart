@@ -1,0 +1,57 @@
+{% extends 'users/home_layout.html'%}
+{% block content%}
+ 
+<div class="row" style="height: 1200px;">
+    <div class="col-md-10">
+        <div class="row justify-content-center" style="margin-top: 100px; padding-bottom: 100px;">
+            <div class="col-md-5 px-2">
+                <form action="" enctype="multipart/form-data" method="POST" class="card px-5" novalidate>
+                    {% set m = get_flashed_messages(with_categories=True)%}
+                        {% for x,y in m%}
+                            {% if x =='profilemsg': %}
+                                <div class="alert alert-info">{{y}}</div>
+                            {% else: %}
+                                <div class="alert alert-info mt-2">{{y}}</div>
+                            {% endif %}
+                        {%endfor%}
+                    <h4 class="text-center pt-4">EDIT PROFILE</h4>
+                    {{ edit.csrf_token}}
+                    <div class="mb-3 pt-3">
+                        <label for="fullname">First Name</label>
+                        <input type="text" name="fullname" id="fullname" class="form-control" value="{{ userdeets.user_fname}}">
+                    </div>
+                        <div class="mb-3 pt-3">
+                            <label for="lastname">Last Name</label>
+                        <input type="text" name="lastname" id="lastname" class="form-control" value="{{ userdeets.user_lname}}">
+                        </div>
+                        <div class="mb-3 pt-3">
+                            <label for="city">city</label>
+                        <input type="text" name="city" id="city" class="form-control" value="{{ userdeets.user_city}}"> 
+                        </div>
+                        <div class="mb-3 pt-3">
+                            <label for="phone">Mobile Number</label>
+                        <input type="text" name="phone" id="phone" class="form-control" value="{{ userdeets.user_phone}}">
+                        </div>   
+                        <div class="mb-3 pt-3">
+                            <label for="address">Enter Address</label>
+                            <input type="text" name="address" id="address" class="form-control" value="{{ userdeets.user_add}}">
+                        </div>
+                        <div class="mb-3 pt-3">
+                            <label for="state">Enter State</label>
+                            <input type="text" name="state" id="state" class="form-control" value="{{ userdeets.user_state}}">
+                        </div>
+                        <div class="mb-3 pt-3">
+                            {{ edit.dplabel}}
+                            {{ edit.dp(class_='form-control' )}} 
+                        </div> 
+                        <div>
+                        {{ edit.btnsubmit(class_='form-control bg-danger text-white mb-4' )}} 
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content%}

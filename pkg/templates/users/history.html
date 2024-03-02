@@ -1,0 +1,45 @@
+{% extends 'users/home_layout.html'%}
+{% block content%}
+<div class="row justify-content-center my-5">
+    <div class="col-md-7 bg-white">
+        <h4 class="text-center py-3"><b>TRANSACTION HISTORY</b></h4>
+        {% if payment%}
+        <table class="table table-stripped text-center">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>PROJECT IMAGE</th>
+                    <th>DESCRIPTION</th>
+                    <th>AMOUNT</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for x in  payment%}
+
+                <tr>
+                    <td>{{ loop.index }}</td>
+
+                    <td><img src="/static/uploads/{{x.paymentupd.upload_filename}}" alt="" height="100"></td>
+                    <td>{{x.paymentupd.upload_desc}}</td>
+                    <td>&#8358; {{ x.payment_amt}}</td>
+                    <td class="btn bg-success text-white my-5">{{ x.payment_status}}</td>
+                    
+                </tr>
+               {%endfor%}
+            </tbody>
+
+
+        </table>
+        {% else%}
+        <div class="alert alert-info">
+           <h4> NO TRANSACTION FOUND </h4>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock content%}
+
+			
